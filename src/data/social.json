@@ -1,0 +1,17 @@
+[
+    {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/muhammad-rafi-fatihul-ihsan-mrfi",
+        "icon": "Linkedin"
+    },
+    {
+        "platform": "GitHub",
+        "url": "https://github.com/muhammadrafifatihulihsan",
+        "icon": "Github"
+    },
+    {
+        "platform": "Email",
+        "url": "mailto:muhammadrafifatihulihsan@gmail.com",
+        "icon": "Mail"
+    }
+]

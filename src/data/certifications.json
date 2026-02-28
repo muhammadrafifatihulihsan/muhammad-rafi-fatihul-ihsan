@@ -1,0 +1,47 @@
+[
+	{
+		"name": "Belajar Machine Learning untuk Pemula",
+		"issuer": "DICODING INDONESIA",
+		"year": "2024",
+		"icon": "Cpu",
+		"iconBg": "rgba(196,132,29,0.1)",
+		"iconColor": "#C4841D",
+		"link": "https://ude.my/UC-e6c55523-ade3-44e6-8dc1-3696b8f104ab"
+	},
+	{
+		"name": "Belajar Dasar AI",
+		"issuer": "DICODING INDONESIA",
+		"year": "2024",
+		"icon": "BrainCircuit",
+		"iconBg": "rgba(45,143,78,0.1)",
+		"iconColor": "#2D8F4E",
+		"link": "https://ude.my/UC-e6c55523-ade3-44e6-8dc1-3696b8f104ab"
+	},
+	{
+		"name": "Belajar Membuat Aplikasi Web dengan React",
+		"issuer": "DICODING INDONESIA",
+		"year": "2023",
+		"icon": "Atom",
+		"iconBg": "rgba(99,102,241,0.1)",
+		"iconColor": "#6366F1",
+		"link": "https://ude.my/UC-e6c55523-ade3-44e6-8dc1-3696b8f104ab"
+	},
+	{
+		"name": "Belajar Back-End Pemula dengan JavaScript",
+		"issuer": "DICODING INDONESIA",
+		"year": "2023",
+		"icon": "Server",
+		"iconBg": "rgba(59,130,246,0.1)",
+		"iconColor": "#3B82F6",
+		"link": "https://ude.my/UC-e6c55523-ade3-44e6-8dc1-3696b8f104ab"
+	},
+	{
+		"name": "Python for Data Science",
+		"issuer": "ADDITIONAL CERTIFICATION",
+		"year": "2024",
+		"icon": "LineChart",
+		"iconBg": "rgba(245,158,11,0.1)",
+		"iconColor": "#F59E0B",
+		"link": "https://ude.my/UC-e6c55523-ade3-44e6-8dc1-3696b8f104ab"
+	}
+]

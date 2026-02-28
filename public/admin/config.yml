@@ -1,0 +1,103 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: profile
+    label: Profile
+    files:
+      - name: profile
+        label: Profile Info
+        file: src/data/profile.json
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Avatar, name: avatar, widget: image }
+          - { label: Title, name: title, widget: string }
+          - { label: Headline Line 1, name: headline1, widget: string }
+          - { label: Headline Line 2, name: headline2, widget: string }
+          - { label: Eyebrow Text, name: eyebrow, widget: string }
+          - { label: Status, name: status, widget: string }
+          - { label: Pronouns, name: pronouns, widget: string }
+          - label: Roles (Typing Effect)
+            name: roles
+            widget: list
+            field: { label: Role, name: role, widget: string }
+
+  - name: social
+    label: Social Links
+    file: src/data/social.json
+    fields:
+      - label: Links
+        name: links
+        widget: list
+        fields:
+          - { label: Platform, name: platform, widget: string }
+          - { label: URL, name: url, widget: string }
+          - { label: "Icon (Lucide)", name: icon, widget: string, hint: "Linkedin, Github, Mail, ExternalLink" }
+
+  - name: projects
+    label: Projects
+    file: src/data/projects.json
+    fields:
+      - label: Projects
+        name: projects
+        widget: list
+        fields:
+          - { label: ID (unique), name: id, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Type Label, name: type, widget: string }
+          - { label: Featured, name: featured, widget: boolean, default: false }
+          - { label: Description (HTML allowed), name: description, widget: text }
+          - { label: Tech Stack, name: tech, widget: list, field: { label: Tech, name: tech, widget: string } }
+          - { label: GitHub URL, name: github, widget: string, required: false }
+          - { label: Demo URL, name: demo, widget: string, required: false }
+          - { label: Mockup Type, name: mockupType, widget: select, options: [minangverse, ml, btn, kopi, notes, default] }
+          - { label: Preview URL, name: previewUrl, widget: string }
+          - { label: Modal Description, name: modalDescription, widget: text }
+
+  - name: experiences
+    label: Experiences
+    file: src/data/experiences.json
+    fields:
+      - label: Experiences
+        name: experiences
+        widget: list
+        fields:
+          - { label: Period, name: period, widget: string }
+          - { label: Role, name: role, widget: string }
+          - { label: Organization, name: organization, widget: string }
+          - { label: Description, name: description, widget: text }
+
+  - name: certifications
+    label: Certifications
+    file: src/data/certifications.json
+    fields:
+      - label: Certifications
+        name: certifications
+        widget: list
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Issuer, name: issuer, widget: string }
+          - { label: Year, name: year, widget: string }
+          - { label: Icon (emoji), name: icon, widget: string }
+          - { label: Icon Background, name: iconBg, widget: string, hint: "e.g. rgba(196,132,29,0.1)" }
+
+  - name: skills
+    label: Skills
+    file: src/data/skills.json
+    fields:
+      - label: Categories
+        name: categories
+        widget: list
+        fields:
+          - { label: Category Title, name: category, widget: string }
+          - label: Skills
+            name: skills
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Highlight, name: highlight, widget: boolean, default: false }

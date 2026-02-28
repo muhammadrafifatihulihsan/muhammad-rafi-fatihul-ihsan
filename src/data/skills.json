@@ -1,0 +1,41 @@
+[
+	{
+		"category": "// Frontend",
+		"label": "UI & Interaction",
+		"icon": "⬡",
+		"skills": [
+			{ "name": "React", "highlight": true },
+			{ "name": "JavaScript", "highlight": true },
+			{ "name": "TypeScript", "highlight": false },
+			{ "name": "Tailwind CSS", "highlight": false },
+			{ "name": "HTML/CSS", "highlight": false },
+			{ "name": "Vite", "highlight": false }
+		]
+	},
+	{
+		"category": "// Backend",
+		"label": "Server & Data",
+		"icon": "⬢",
+		"skills": [
+			{ "name": "Node.js", "highlight": true },
+			{ "name": "Express", "highlight": true },
+			{ "name": "REST API", "highlight": false },
+			{ "name": "MySQL", "highlight": false },
+			{ "name": "MongoDB", "highlight": false },
+			{ "name": "Socket.io", "highlight": false }
+		]
+	},
+	{
+		"category": "// AI / ML",
+		"label": "Intelligence Layer",
+		"icon": "◈",
+		"skills": [
+			{ "name": "Python", "highlight": true },
+			{ "name": "scikit-learn", "highlight": true },
+			{ "name": "Pandas", "highlight": false },
+			{ "name": "NumPy", "highlight": false },
+			{ "name": "Jupyter", "highlight": false },
+			{ "name": "ML Pipelines", "highlight": false }
+		]
+	}
+]

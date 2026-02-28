@@ -1,0 +1,45 @@
+{
+	"name": "Muhammad Rafi Fatihul Ihsan",
+	"email": "muhammadrafifatihulihsan@gmail.com",
+	"avatar": "/images/profile.jpg",
+	"title": "Fullstack Developer → AI/ML Engineer",
+	"headline1": "Bridging Web Systems",
+	"headline2": "& Intelligent Models.",
+	"eyebrow": "Muhammad Rafi Fatihul Ihsan  —  Portfolio 2025",
+	"status": "Open to Opportunities",
+	"pronouns": "He / Him",
+	"roles": [
+		"Fullstack Developer (MERN)",
+		"AI / ML Enthusiast",
+		"Systems-Driven Engineer",
+		"Building in Public 🛠️"
+	],
+	"about": {
+		"sectionLabel": "The Narrative",
+		"heading": "The Systems-Driven\nApproach to AI",
+		"paragraphs": [
+			"I am a <strong>Full-Stack Developer (MERN Stack)</strong> transitioning into AI Engineering. My experience building production-ready apps — from a government-commissioned cultural platform to housing finance systems — taught me that real impact happens when <strong>robust architecture meets practical implementation</strong>.",
+			"My background in MySQL, Express, React, and Node.js shapes how I approach AI: I understand data pipelines through database design, model serving through APIs, and scalability through distributed systems.",
+			"Currently, I'm building ML models in Python and integrating them into full-stack applications — ensuring they are <strong>engineered to scale</strong>, not just operate in isolation."
+		],
+		"ctaText": "View My Engineering Journey"
+	},
+	"bridge": {
+		"left": {
+			"icon": "🗄️",
+			"label": "Production\nSystems",
+			"tags": ["MySQL", "MongoDB", "Node.js", "Express", "React"],
+			"accentTags": ["MySQL"]
+		},
+		"right": {
+			"icon": "🧠",
+			"label": "Intelligent\nModels",
+			"tags": ["Python", "scikit-learn", "Pandas", "ML APIs", "NLP"],
+			"accentTags": ["Python"]
+		},
+		"connectorText": "Robust Architecture\nmeets\nPractical AI"
+	},
+	"contactHeading": "Let's Build\nSomething.",
+	"contactSubtext": "Open to roles at the intersection of production-ready engineering and intelligent systems. Whether you're a technical recruiter, founder, or fellow engineer — let's connect.",
+	"footerText": "Made with ♥ & too much coffee"
+}

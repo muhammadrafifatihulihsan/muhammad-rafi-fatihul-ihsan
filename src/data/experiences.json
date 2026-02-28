@@ -1,0 +1,20 @@
+[
+    {
+        "period": "2025 — Present",
+        "role": "Fullstack Developer",
+        "organization": "Kementerian Kebudayaan Indonesia",
+        "description": "Built Minangverse — a government-commissioned interactive platform to digitize Minangkabau cultural heritage. Led client-side architecture and UI development."
+    },
+    {
+        "period": "2024",
+        "role": "Frontend Developer",
+        "organization": "BTN (Bank Tabungan Negara) — Project",
+        "description": "Developed BTNHousingPreneur — a housing finance web platform using TypeScript and React with a production-ready, type-safe architecture."
+    },
+    {
+        "period": "2023 — 2024",
+        "role": "Fullstack Developer (MERN)",
+        "organization": "Freelance / Independent Projects",
+        "description": "Built multiple full-stack applications across e-commerce, productivity, and branding. Transitioned to integrating ML models into production web systems."
+    }
+]

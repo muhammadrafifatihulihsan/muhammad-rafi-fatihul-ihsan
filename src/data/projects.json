@@ -1,0 +1,177 @@
+[
+	{
+		"id": "minangverse",
+		"title": "Minangverse",
+		"type": "🏆 Government Commission  ·  Featured",
+		"featured": true,
+		"description": "An interactive web platform commissioned by <strong>Kementerian Kebudayaan Indonesia (2025)</strong> to digitize and showcase Minangkabau culture. A full-stack project with rich UI, dynamic content, and client-side architecture. Built to serve as the digital front-door for Indonesian cultural heritage.",
+		"tech": ["React", "JavaScript", "REST API", "Government Project"],
+		"github": "https://github.com/muhammadrafifatihulihsan/Minangverse",
+		"demo": "https://minangverse-project.vercel.app/",
+		"mockupType": "minangverse",
+		"previewUrl": "minangverse.kemdikbud.go.id",
+		"modalDescription": "A government-commissioned platform by Kementerian Kebudayaan Indonesia (2025) built to showcase and digitize Minangkabau cultural heritage. Features rich visual content, interactive navigation, and a modern React architecture for a public-facing cultural portal.",
+		"screenshots": [
+			{
+				"label": "Landing Page",
+				"emoji": "Mountain",
+				"gradient": "linear-gradient(135deg,#1E3B0A,#3D7022)"
+			},
+			{
+				"label": "Culture Explorer",
+				"emoji": "Map",
+				"gradient": "linear-gradient(135deg,#2D5016,#5A9030)"
+			},
+			{
+				"label": "Content Gallery",
+				"emoji": "Image",
+				"gradient": "linear-gradient(135deg,#1E3B0A,#4A8025)"
+			},
+			{
+				"label": "Navigation / Menu",
+				"emoji": "Compass",
+				"gradient": "linear-gradient(135deg,#0A1E05,#2D5016)"
+			}
+		]
+	},
+	{
+		"id": "heartdisease",
+		"title": "Heart Disease Prediction Bot",
+		"type": "🤖 AI / Machine Learning",
+		"featured": false,
+		"description": "An ML model for cardiovascular disease prediction. Applies classification algorithms to clinical features (age, cholesterol, BP) to predict heart disease risk — a direct demonstration of the MERN→AI bridge using Python's data science stack.",
+		"tech": ["Python", "scikit-learn", "Pandas", "Jupyter"],
+		"github": "https://github.com/muhammadrafifatihulihsan/Heart_Disease_Prediction_Bot",
+		"demo": "https://github.com/muhammadrafifatihulihsan/Heart_Disease_Prediction_Bot.git",
+		"mockupType": "ml",
+		"previewUrl": "heart-prediction-bot.ipynb",
+		"modalDescription": "An ML classification model built in Python and Jupyter Notebook to predict heart disease risk. Uses clinical features (age, chest pain type, cholesterol, resting BP) with algorithms like Random Forest and Logistic Regression. Demonstrates end-to-end ML workflow: data preprocessing, feature engineering, model training, and evaluation.",
+		"screenshots": [
+			{
+				"label": "EDA — Feature Distribution",
+				"emoji": "BarChart3",
+				"gradient": "linear-gradient(135deg,#0F1117,#1a1a2e)"
+			},
+			{
+				"label": "Model Accuracy Report",
+				"emoji": "CheckCircle2",
+				"gradient": "linear-gradient(135deg,#0F1117,#162016)"
+			},
+			{
+				"label": "Confusion Matrix",
+				"emoji": "Grid3X3",
+				"gradient": "linear-gradient(135deg,#0F1117,#161625)"
+			},
+			{
+				"label": "Feature Importance",
+				"emoji": "LineChart",
+				"gradient": "linear-gradient(135deg,#0F1117,#1a1a2e)"
+			}
+		]
+	},
+	{
+		"id": "btnhousing",
+		"title": "BTN HousingPreneur",
+		"type": "🏦 Fullstack  ·  TypeScript",
+		"featured": false,
+		"description": "A housing finance web platform for PT Bank Tabungan Negara. Built with TypeScript for type-safe, maintainable code. Features a clean UI for housing loan products and entrepreneurship programs — production-quality front-end with robust architecture.",
+		"tech": ["TypeScript", "React", "Tailwind CSS", "REST API"],
+		"github": "https://github.com/muhammadrafifatihulihsan/BTNHousingPreneur",
+		"demo": "https://github.com/muhammadrafifatihulihsan/BTNHousingPreneur.git",
+		"mockupType": "btn",
+		"previewUrl": "btn-housingpreneur.vercel.app",
+		"modalDescription": "A housing finance web platform for PT Bank Tabungan Negara built with TypeScript and React. Features a clean, professional UI for housing loan products and entrepreneurship programs. Demonstrates type-safe component architecture and professional-grade front-end engineering.",
+		"screenshots": [
+			{
+				"label": "Hero / Landing",
+				"emoji": "Landmark",
+				"gradient": "linear-gradient(135deg,#0A2463,#1B4DBF)"
+			},
+			{
+				"label": "Product Listings",
+				"emoji": "Home",
+				"gradient": "linear-gradient(135deg,#0D1B3E,#1B4DBF)"
+			},
+			{
+				"label": "Dashboard",
+				"emoji": "LayoutDashboard",
+				"gradient": "linear-gradient(135deg,#0A2463,#162D6E)"
+			},
+			{
+				"label": "Mobile Responsive",
+				"emoji": "Smartphone",
+				"gradient": "linear-gradient(135deg,#0D1B3E,#0A2463)"
+			}
+		]
+	},
+	{
+		"id": "kopinongki",
+		"title": "kopiNongki.id",
+		"type": "☕ Landing Page  ·  JavaScript",
+		"featured": false,
+		"description": "A visually rich landing page for a coffee brand. Demonstrates pixel-perfect UI craft with attention to typography, color, and brand identity — showing the front-end finesse that complements back-end engineering skills.",
+		"tech": ["JavaScript", "HTML/CSS", "UI Design"],
+		"github": "https://github.com/muhammadrafifatihulihsan/kopiNongki",
+		"demo": "https://kopi-nongki.vercel.app/",
+		"mockupType": "kopi",
+		"previewUrl": "kopinongki.id",
+		"modalDescription": "A premium landing page for kopiNongki.id — a coffee brand. Showcases strong front-end UI skills: brand typography, warm color palette, menu sections, and responsive layout. Built to communicate brand identity through clean visual design.",
+		"screenshots": [
+			{
+				"label": "Hero Section",
+				"emoji": "Coffee",
+				"gradient": "linear-gradient(160deg,#1A0A00,#6B2D0A)"
+			},
+			{
+				"label": "Menu / Products",
+				"emoji": "CupSoda",
+				"gradient": "linear-gradient(135deg,#2A1000,#4B1E08)"
+			},
+			{
+				"label": "About / Story",
+				"emoji": "BookOpen",
+				"gradient": "linear-gradient(135deg,#1A0A00,#3D1A05)"
+			},
+			{
+				"label": "Footer / Contact",
+				"emoji": "MapPin",
+				"gradient": "linear-gradient(135deg,#0D0500,#1A0A00)"
+			}
+		]
+	},
+	{
+		"id": "notedqu",
+		"title": "notedQu.id",
+		"type": "📝 Web App  ·  Local Storage",
+		"featured": false,
+		"description": "A notes web app with local-first data persistence. Clean and minimal interface with keyboard-driven UX. Demonstrates an understanding of client-side state management and persisted local storage architecture.",
+		"tech": ["JavaScript", "Local Storage", "SPA"],
+		"github": "https://github.com/muhammadrafifatihulihsan/notedQu.id",
+		"demo": "https://notedquid.vercel.app/",
+		"mockupType": "notes",
+		"previewUrl": "notedqu.id",
+		"modalDescription": "A local-first notes application with clean UI and keyboard-friendly interactions. Persists data using browser local storage for offline capability. Demonstrates understanding of client-side state management, SPA architecture, and polished UX design.",
+		"screenshots": [
+			{
+				"label": "Main Editor",
+				"emoji": "PenTool",
+				"gradient": "linear-gradient(135deg,#141820,#1e2030)"
+			},
+			{
+				"label": "Notes List",
+				"emoji": "Library",
+				"gradient": "linear-gradient(135deg,#0E1018,#141820)"
+			},
+			{
+				"label": "Mobile View",
+				"emoji": "Smartphone",
+				"gradient": "linear-gradient(135deg,#141820,#1e2030)"
+			},
+			{
+				"label": "Dark Theme",
+				"emoji": "Moon",
+				"gradient": "linear-gradient(135deg,#0A0C12,#141820)"
+			}
+		]
+	}
+]

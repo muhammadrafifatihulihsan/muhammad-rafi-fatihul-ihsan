@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — ULTRA-CLEAN FIGMA / MATERIAL HYBRID
+   Aesthetic: Whitespace, soft diffused shadows, minimal borders,
+   elegant typography, buttery smooth interactions.
+   ============================================================ */
+
+@theme {
+  --color-bg: #FAFAFB;
+  /* Very soft off-white */
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F3F4F6;
+
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-hover: rgba(0, 0, 0, 0.12);
+
+  --color-text: #09090B;
+  /* Almost black */
+  --color-text-muted: #71717A;
+  --color-text-faint: #A1A1AA;
+
+  /* Primary Accent: Sophisticated Slate/Indigo blend */
+  --color-accent: #2563EB;
+  /* Clean Blue */
+  --color-accent-light: rgba(37, 99, 235, 0.08);
+  --color-accent-border: rgba(37, 99, 235, 0.2);
+
+  /* Secondary Accent */
+  --color-secondary: #0F172A;
+  /* Deep Slate */
+
+  /* Fonts */
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+:root {
+  /* Spacing Scale (8px base) */
+  --space-0: 0px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+  /* Typography Line Heights */
+  --lh-tight: 1.25;
+  --lh-base: 1.5;
+  --lh-relaxed: 1.75;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: var(--lh-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Utilities */
+.p-sm {
+  padding: var(--space-2);
+}
+
+.p-md {
+  padding: var(--space-3);
+}
+
+.p-lg {
+  padding: var(--space-4);
+}
+
+.px-md {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+.px-lg {
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.gap-sm {
+  gap: var(--space-2);
+}
+
+.gap-md {
+  gap: var(--space-3);
+}
+
+.gap-lg {
+  gap: var(--space-4);
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.tracking-tightest {
+  letter-spacing: -0.04em;
+}
+
+/* ============================================================
+   LAYOUT WRAPPERS
+   ============================================================ */
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-3);
+  /* 24px */
+  padding-right: var(--space-3);
+  /* 24px */
+}
+
+/* ============================================================
+   SOFT MATERIAL CARDS / BENTO GRID
+   ============================================================ */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.bento-card {
+  background: var(--color-surface);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 20px -2px rgba(0, 0, 0, 0.03),
+    0 0 0 1px rgba(0, 0, 0, 0.03) inset;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px -8px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.04) inset;
+}
+
+/* ============================================================
+   CHIPS & PILLS
+   ============================================================ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text);
+  background: var(--color-surface-hover);
+}
+
+.chip.active {
+  background: var(--color-secondary);
+  color: #fff;
+  border-color: var(--color-secondary);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  min-height: 40px;
+  background: var(--color-secondary);
+  color: white;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #000;
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .btn-primary {
+    min-height: 36px;
+    padding: 10px var(--space-2);
+  }
+}
+
+/* ============================================================
+   NOISE TEXTURE (very subtle, modern)
+   ============================================================ */
+.bg-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: multiply;
+}
+
+/* ============================================================
+   AURORA GLOW
+   ============================================================ */
+.aurora-bg {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D1D5DB;
+}
+
+/* ============================================================
+   PULSAR
+   ============================================================ */
+.online-pulse {
+  position: relative;
+}
+
+.online-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: #10B981;
+  opacity: 0.4;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   BROWSER CHROME
+   ============================================================ */
+.mac-chrome {
+  background: rgba(250, 250, 250, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mac-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mac-close {
+  background: #FF5F56;
+  border: 1px solid #E0443E;
+}
+
+.mac-min {
+  background: #FFBD2E;
+  border: 1px solid #DEA123;
+}
+
+.mac-max {
+  background: #27C93F;
+  border: 1px solid #1AAB29;
+}
