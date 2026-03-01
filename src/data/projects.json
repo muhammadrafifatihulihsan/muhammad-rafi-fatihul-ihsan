@@ -4,6 +4,7 @@
 		"title": "Minangverse",
 		"type": "🏆 Government Commission  ·  Featured",
 		"featured": true,
+		"thumbnail": "../../public/minangverse/1.png",
 		"description": "An interactive web platform commissioned by <strong>Kementerian Kebudayaan Indonesia (2025)</strong> to digitize and showcase Minangkabau culture. A full-stack project with rich UI, dynamic content, and client-side architecture. Built to serve as the digital front-door for Indonesian cultural heritage.",
 		"tech": ["React", "JavaScript", "REST API", "Government Project"],
 		"github": "https://github.com/muhammadrafifatihulihsan/Minangverse",
@@ -13,23 +14,27 @@
 		"modalDescription": "A government-commissioned platform by Kementerian Kebudayaan Indonesia (2025) built to showcase and digitize Minangkabau cultural heritage. Features rich visual content, interactive navigation, and a modern React architecture for a public-facing cultural portal.",
 		"screenshots": [
 			{
-				"label": "Landing Page",
+				"label": "Preview",
 				"emoji": "Mountain",
+				"image": "../../public/minangverse/2.png",
 				"gradient": "linear-gradient(135deg,#1E3B0A,#3D7022)"
 			},
 			{
-				"label": "Culture Explorer",
+				"label": "Preview",
 				"emoji": "Map",
+				"image": "../../public/minangverse/3.png",
 				"gradient": "linear-gradient(135deg,#2D5016,#5A9030)"
 			},
 			{
-				"label": "Content Gallery",
+				"label": "Preview",
 				"emoji": "Image",
+				"image": "../../public/minangverse/4.png",
 				"gradient": "linear-gradient(135deg,#1E3B0A,#4A8025)"
 			},
 			{
-				"label": "Navigation / Menu",
+				"label": "Preview",
 				"emoji": "Compass",
+				"image": "../../public/minangverse/5.png",
 				"gradient": "linear-gradient(135deg,#0A1E05,#2D5016)"
 			}
 		]
@@ -39,6 +44,7 @@
 		"title": "Heart Disease Prediction Bot",
 		"type": "🤖 AI / Machine Learning",
 		"featured": false,
+		"thumbnail": "../../public/heartdiseasepredictionbot/1.jpg",
 		"description": "An ML model for cardiovascular disease prediction. Applies classification algorithms to clinical features (age, cholesterol, BP) to predict heart disease risk — a direct demonstration of the MERN→AI bridge using Python's data science stack.",
 		"tech": ["Python", "scikit-learn", "Pandas", "Jupyter"],
 		"github": "https://github.com/muhammadrafifatihulihsan/Heart_Disease_Prediction_Bot",
@@ -48,23 +54,27 @@
 		"modalDescription": "An ML classification model built in Python and Jupyter Notebook to predict heart disease risk. Uses clinical features (age, chest pain type, cholesterol, resting BP) with algorithms like Random Forest and Logistic Regression. Demonstrates end-to-end ML workflow: data preprocessing, feature engineering, model training, and evaluation.",
 		"screenshots": [
 			{
-				"label": "EDA — Feature Distribution",
+				"label": "Preview",
 				"emoji": "BarChart3",
+				"image": "../../public/heartdiseasepredictionbot/2.png",
 				"gradient": "linear-gradient(135deg,#0F1117,#1a1a2e)"
 			},
 			{
-				"label": "Model Accuracy Report",
+				"label": "Preview",
 				"emoji": "CheckCircle2",
+				"image": "../../public/heartdiseasepredictionbot/3.png",
 				"gradient": "linear-gradient(135deg,#0F1117,#162016)"
 			},
 			{
-				"label": "Confusion Matrix",
+				"label": "Preview",
 				"emoji": "Grid3X3",
+				"image": "../../public/heartdiseasepredictionbot/4.png",
 				"gradient": "linear-gradient(135deg,#0F1117,#161625)"
 			},
 			{
-				"label": "Feature Importance",
+				"label": "Preview",
 				"emoji": "LineChart",
+				"image": "../../public/heartdiseasepredictionbot/5.png",
 				"gradient": "linear-gradient(135deg,#0F1117,#1a1a2e)"
 			}
 		]
@@ -74,6 +84,7 @@
 		"title": "BTN HousingPreneur",
 		"type": "🏦 Fullstack  ·  TypeScript",
 		"featured": false,
+		"thumbnail": "../../public/btnhousingpreneur/1.png",
 		"description": "A housing finance web platform for PT Bank Tabungan Negara. Built with TypeScript for type-safe, maintainable code. Features a clean UI for housing loan products and entrepreneurship programs — production-quality front-end with robust architecture.",
 		"tech": ["TypeScript", "React", "Tailwind CSS", "REST API"],
 		"github": "https://github.com/muhammadrafifatihulihsan/BTNHousingPreneur",
@@ -83,23 +94,27 @@
 		"modalDescription": "A housing finance web platform for PT Bank Tabungan Negara built with TypeScript and React. Features a clean, professional UI for housing loan products and entrepreneurship programs. Demonstrates type-safe component architecture and professional-grade front-end engineering.",
 		"screenshots": [
 			{
-				"label": "Hero / Landing",
+				"label": "Preview",
 				"emoji": "Landmark",
+				"image": "../../public/btnhousingpreneur/2.png",
 				"gradient": "linear-gradient(135deg,#0A2463,#1B4DBF)"
 			},
 			{
-				"label": "Product Listings",
+				"label": "Preview",
 				"emoji": "Home",
+				"image": "../../public/btnhousingpreneur/3.png",
 				"gradient": "linear-gradient(135deg,#0D1B3E,#1B4DBF)"
 			},
 			{
-				"label": "Dashboard",
+				"label": "Preview",
 				"emoji": "LayoutDashboard",
+				"image": "../../public/btnhousingpreneur/4.png",
 				"gradient": "linear-gradient(135deg,#0A2463,#162D6E)"
 			},
 			{
-				"label": "Mobile Responsive",
+				"label": "Preview",
 				"emoji": "Smartphone",
+				"image": "../../public/btnhousingpreneur/5.png",
 				"gradient": "linear-gradient(135deg,#0D1B3E,#0A2463)"
 			}
 		]
@@ -109,6 +124,7 @@
 		"title": "kopiNongki.id",
 		"type": "☕ Landing Page  ·  JavaScript",
 		"featured": false,
+		"thumbnail": "../../public/kopinongki/1.png",
 		"description": "A visually rich landing page for a coffee brand. Demonstrates pixel-perfect UI craft with attention to typography, color, and brand identity — showing the front-end finesse that complements back-end engineering skills.",
 		"tech": ["JavaScript", "HTML/CSS", "UI Design"],
 		"github": "https://github.com/muhammadrafifatihulihsan/kopiNongki",
@@ -118,23 +134,27 @@
 		"modalDescription": "A premium landing page for kopiNongki.id — a coffee brand. Showcases strong front-end UI skills: brand typography, warm color palette, menu sections, and responsive layout. Built to communicate brand identity through clean visual design.",
 		"screenshots": [
 			{
-				"label": "Hero Section",
+				"label": "Preview",
 				"emoji": "Coffee",
+				"image": "../../public/kopinongki/2.png",
 				"gradient": "linear-gradient(160deg,#1A0A00,#6B2D0A)"
 			},
 			{
-				"label": "Menu / Products",
+				"label": "Preview",
 				"emoji": "CupSoda",
+				"image": "../../public/kopinongki/3.png",
 				"gradient": "linear-gradient(135deg,#2A1000,#4B1E08)"
 			},
 			{
-				"label": "About / Story",
+				"label": "Preview",
 				"emoji": "BookOpen",
+				"image": "../../public/kopinongki/4.png",
 				"gradient": "linear-gradient(135deg,#1A0A00,#3D1A05)"
 			},
 			{
-				"label": "Footer / Contact",
+				"label": "Preview",
 				"emoji": "MapPin",
+				"image": "../../public/kopinongki/5.png",
 				"gradient": "linear-gradient(135deg,#0D0500,#1A0A00)"
 			}
 		]
@@ -144,6 +164,7 @@
 		"title": "notedQu.id",
 		"type": "📝 Web App  ·  Local Storage",
 		"featured": false,
+		"thumbnail": "../../public/notedqu/1.png",
 		"description": "A notes web app with local-first data persistence. Clean and minimal interface with keyboard-driven UX. Demonstrates an understanding of client-side state management and persisted local storage architecture.",
 		"tech": ["JavaScript", "Local Storage", "SPA"],
 		"github": "https://github.com/muhammadrafifatihulihsan/notedQu.id",
@@ -153,23 +174,27 @@
 		"modalDescription": "A local-first notes application with clean UI and keyboard-friendly interactions. Persists data using browser local storage for offline capability. Demonstrates understanding of client-side state management, SPA architecture, and polished UX design.",
 		"screenshots": [
 			{
-				"label": "Main Editor",
+				"label": "Preview",
 				"emoji": "PenTool",
+				"image": "../../public/notedqu/2.png",
 				"gradient": "linear-gradient(135deg,#141820,#1e2030)"
 			},
 			{
-				"label": "Notes List",
+				"label": "Preview",
 				"emoji": "Library",
+				"image": "../../public/notedqu/3.png",
 				"gradient": "linear-gradient(135deg,#0E1018,#141820)"
 			},
 			{
-				"label": "Mobile View",
+				"label": "Preview",
 				"emoji": "Smartphone",
+				"image": "../../public/notedqu/4.png",
 				"gradient": "linear-gradient(135deg,#141820,#1e2030)"
 			},
 			{
-				"label": "Dark Theme",
+				"label": "Preview",
 				"emoji": "Moon",
+				"image": "../../public/notedqu/5.png",
 				"gradient": "linear-gradient(135deg,#0A0C12,#141820)"
 			}
 		]

@@ -5,10 +5,8 @@ import {
 	Github,
 	X,
 	ArrowUpRight,
-	ArrowRight,
-	Mountain,
 	Activity,
-	Building2,
+	Mountain,
 	BookOpen,
 	Coffee,
 	Image,
@@ -42,7 +40,6 @@ const itemVariant = {
 const iconMap = {
 	Mountain,
 	Activity,
-	Building2,
 	BookOpen,
 	Coffee,
 	Image,
@@ -268,6 +265,8 @@ function ProjectModal({ project, onClose }) {
 					>
 						{project.screenshots.map((ss, i) => {
 							const IconComponent = iconMap[ss.emoji] || Activity;
+							const hasImage = ss.image && ss.image.trim() !== "";
+
 							return (
 								<div
 									key={i}
@@ -278,6 +277,7 @@ function ProjectModal({ project, onClose }) {
 										background: "#f9f9f9",
 									}}
 								>
+									{/* Screenshot label bar */}
 									<div
 										style={{
 											height: "30px",
@@ -300,29 +300,48 @@ function ProjectModal({ project, onClose }) {
 											{ss.label}
 										</span>
 									</div>
+
+									{/* Screenshot image or gradient fallback */}
 									<div
 										style={{
-											height: "120px",
+											height: "140px",
+											overflow: "hidden",
+											position: "relative",
+											background: hasImage ? "#000" : ss.gradient,
 											display: "flex",
 											alignItems: "center",
 											justifyContent: "center",
-											background: ss.gradient,
-											position: "relative",
 										}}
 									>
-										<div
-											style={{
-												position: "absolute",
-												inset: 0,
-												background: "rgba(0,0,0,0.08)",
-											}}
-										/>
-										<IconComponent
-											size={32}
-											color="rgba(255,255,255,0.9)"
-											strokeWidth={1.5}
-											style={{ position: "relative", zIndex: 1 }}
-										/>
+										{hasImage ? (
+											<img
+												src={ss.image}
+												alt={ss.label}
+												style={{
+													width: "100%",
+													height: "100%",
+													objectFit: "cover",
+													objectPosition: "top",
+													display: "block",
+												}}
+											/>
+										) : (
+											<>
+												<div
+													style={{
+														position: "absolute",
+														inset: 0,
+														background: "rgba(0,0,0,0.08)",
+													}}
+												/>
+												<IconComponent
+													size={32}
+													color="rgba(255,255,255,0.9)"
+													strokeWidth={1.5}
+													style={{ position: "relative", zIndex: 1 }}
+												/>
+											</>
+										)}
 									</div>
 								</div>
 							);
@@ -371,9 +390,11 @@ function ProjectCard({ project, onClick }) {
 				overflow: "hidden",
 				cursor: "pointer",
 				transition: "all 0.3s ease",
+				/* Desktop: featured spans 2 cols */
 				gridColumn: isFeatured ? "span 2" : undefined,
 			}}
-			className="group"
+			/* Mobile override via className — see grid below */
+			className={`group${isFeatured ? " project-card--featured" : ""}`}
 			whileHover={{
 				y: -4,
 				boxShadow: "0 20px 48px rgba(0,0,0,0.08)",
@@ -392,6 +413,7 @@ function ProjectCard({ project, onClick }) {
 					width: isFeatured ? "380px" : "100%",
 					overflow: "hidden",
 				}}
+				className={isFeatured ? "project-preview--featured" : ""}
 			>
 				<div
 					style={{
@@ -401,7 +423,11 @@ function ProjectCard({ project, onClick }) {
 					}}
 					className="group-hover:scale-[1.02]"
 				>
-					<ProjectMockup type={project.mockupType} />
+					<ProjectMockup
+						type={project.mockupType}
+						thumbnail={project.thumbnail}
+						previewUrl={project.previewUrl}
+					/>
 				</div>
 			</div>
 
@@ -553,102 +579,133 @@ export default function Projects() {
 	const [selectedProject, setSelectedProject] = useState(null);
 
 	return (
-		<section
-			id="projects"
-			className="py-32 relative border-b border-[var(--color-border)]"
-		>
-			<div className="section-container">
-				{/* Header */}
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.1 }}
-					variants={{
-						hidden: { opacity: 0 },
-						visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-					}}
-					style={{ marginBottom: "56px", paddingTop: "16px" }}
-				>
+		<>
+			{/* ── Mobile-specific overrides ── */}
+			<style>{`
+				@media (max-width: 639px) {
+					.projects-grid {
+						grid-template-columns: 1fr !important;
+					}
+					.project-card--featured {
+						grid-column: span 1 !important;
+						flex-direction: column !important;
+					}
+					.project-preview--featured {
+						width: 100% !important;
+						height: 220px !important;
+						border-right: none !important;
+						border-bottom: 1px solid var(--color-border) !important;
+					}
+				}
+			`}</style>
+
+			<section
+				id="projects"
+				className="py-32 relative border-b border-[var(--color-border)]"
+			>
+				<div className="section-container">
+					{/* Header */}
 					<motion.div
-						variants={itemVariant}
-						style={{
-							fontFamily: "monospace",
-							fontSize: "11px",
-							letterSpacing: "0.2em",
-							textTransform: "uppercase",
-							color: "var(--color-accent)",
-							marginBottom: "16px",
-							display: "flex",
-							alignItems: "center",
-							gap: "10px",
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.1 }}
+						variants={{
+							hidden: { opacity: 0 },
+							visible: {
+								opacity: 1,
+								transition: { staggerChildren: 0.1 },
+							},
 						}}
+						style={{ marginBottom: "56px", paddingTop: "16px" }}
 					>
-						Proof of Work
-						<div
+						<motion.div
+							variants={itemVariant}
 							style={{
-								height: "1px",
-								width: "48px",
-								background: "var(--color-accent)",
-								opacity: 0.4,
+								fontFamily: "monospace",
+								fontSize: "11px",
+								letterSpacing: "0.2em",
+								textTransform: "uppercase",
+								color: "var(--color-accent)",
+								marginBottom: "16px",
+								display: "flex",
+								alignItems: "center",
+								gap: "10px",
 							}}
-						/>
+						>
+							Proof of Work
+							<div
+								style={{
+									height: "1px",
+									width: "48px",
+									background: "var(--color-accent)",
+									opacity: 0.4,
+								}}
+							/>
+						</motion.div>
+
+						<motion.h2
+							variants={itemVariant}
+							style={{
+								fontWeight: 700,
+								fontSize: "clamp(28px, 4vw, 40px)",
+								lineHeight: 1.1,
+								color: "var(--color-text)",
+								letterSpacing: "-0.02em",
+								marginBottom: "20px",
+							}}
+						>
+							Selected Projects
+						</motion.h2>
+
+						<motion.div variants={itemVariant}>
+							<LinkButton
+								href="https://github.com/muhammadrafifatihulihsan"
+								icon={Github}
+								label="View All on GitHub"
+								variant="outline"
+							/>
+						</motion.div>
 					</motion.div>
 
-					<motion.h2
-						variants={itemVariant}
+					{/* Grid — desktop: 2 col | mobile: 1 col via .projects-grid class */}
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.05 }}
+						variants={{
+							hidden: { opacity: 0 },
+							visible: {
+								opacity: 1,
+								transition: { staggerChildren: 0.1 },
+							},
+						}}
+						className="projects-grid"
 						style={{
-							fontWeight: 700,
-							fontSize: "clamp(28px, 4vw, 40px)",
-							lineHeight: 1.1,
-							color: "var(--color-text)",
-							letterSpacing: "-0.02em",
-							marginBottom: "20px",
+							display: "grid",
+							gridTemplateColumns: "repeat(2, 1fr)",
+							gap: "16px",
+							paddingBottom: "16px",
 						}}
 					>
-						Selected Projects
-					</motion.h2>
-
-					<motion.div variants={itemVariant}>
-						<LinkButton
-							href="https://github.com/muhammadrafifatihulihsan"
-							icon={Github}
-							label="View All on GitHub"
-							variant="outline"
-						/>
+						{projects.map((p) => (
+							<ProjectCard
+								key={p.id}
+								project={p}
+								onClick={setSelectedProject}
+							/>
+						))}
 					</motion.div>
-				</motion.div>
+				</div>
 
-				{/* Grid */}
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.05 }}
-					variants={{
-						hidden: { opacity: 0 },
-						visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-					}}
-					style={{
-						display: "grid",
-						gridTemplateColumns: "repeat(2, 1fr)",
-						gap: "16px",
-						paddingBottom: "16px",
-					}}
-					className="grid-cols-1 sm:grid-cols-2"
-				>
-					{projects.map((p) => (
-						<ProjectCard key={p.id} project={p} onClick={setSelectedProject} />
-					))}
-				</motion.div>
-			</div>
-
-			<AnimatePresence>
-				{selectedProject && (
-					<ProjectModal
-						project={selectedProject}
-						onClose={() => setSelectedProject(null)}
-					/>
-				)}
-			</AnimatePresence>
-		</section>
+				<AnimatePresence>
+					{selectedProject && (
+						<ProjectModal
+							project={selectedProject}
+							onClose={() => setSelectedProject(null)}
+						/>
+					)}
+				</AnimatePresence>
+			</section>
+		</>
 	);
 }

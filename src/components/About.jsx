@@ -38,6 +38,7 @@ const rightStack = [
 function StackCard({ icon: Icon, label, accent }) {
 	return (
 		<div
+			className="stack-card"
 			style={{
 				display: "flex",
 				alignItems: "center",
@@ -52,6 +53,7 @@ function StackCard({ icon: Icon, label, accent }) {
 					? "var(--color-accent-border, var(--color-accent))"
 					: "var(--color-border)",
 				width: "100%",
+				minWidth: 0,
 			}}
 		>
 			<div
@@ -75,6 +77,7 @@ function StackCard({ icon: Icon, label, accent }) {
 				/>
 			</div>
 			<span
+				className="stack-card__label"
 				style={{
 					fontSize: "11px",
 					fontFamily: "monospace",
@@ -82,6 +85,8 @@ function StackCard({ icon: Icon, label, accent }) {
 					color: accent ? "var(--color-accent)" : "var(--color-text-muted)",
 					letterSpacing: "0.03em",
 					whiteSpace: "nowrap",
+					overflow: "hidden",
+					textOverflow: "ellipsis",
 				}}
 			>
 				{label}
@@ -94,306 +99,383 @@ export default function About() {
 	const { about } = profile;
 
 	return (
-		<section id="about" className="py-32 relative bg-[var(--color-bg)]">
-			<div className="section-container">
-				<motion.div
-					variants={container}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.2 }}
-					className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
-				>
-					{/* ── Visual Bridge Diagram ── */}
+		<>
+			<style>{`
+				/* ── Mobile fixes for architecture diagram ── */
+				@media (max-width: 639px) {
+
+					/* Make the 3-col grid tighter */
+					.arch-grid {
+						gap: 6px !important;
+					}
+
+					/* Shrink center bridge column */
+					.arch-bridge {
+						padding: 0 2px !important;
+					}
+
+					/* Shrink bridge badge */
+					.arch-bridge__badge {
+						width: 34px !important;
+						height: 34px !important;
+						border-radius: 10px !important;
+					}
+
+					/* Hide "Full Stack" text label on very small screens to save space */
+					.arch-bridge__label {
+						display: none !important;
+					}
+
+					/* Shrink dot lines */
+					.arch-bridge__dot {
+						height: 14px !important;
+					}
+
+					/* Stack cards: smaller padding, allow text to wrap */
+					.stack-card {
+						padding: 6px 8px !important;
+						gap: 5px !important;
+					}
+
+					/* Allow label to wrap on mobile */
+					.stack-card__label {
+						font-size: 10px !important;
+						white-space: normal !important;
+						word-break: break-word !important;
+						line-height: 1.3 !important;
+					}
+
+					/* Shrink icon box */
+					.stack-card .icon-box {
+						width: 22px !important;
+						height: 22px !important;
+					}
+
+					/* Shrink diagram padding */
+					.arch-diagram {
+						padding: 20px 12px 20px !important;
+					}
+
+					/* Top labels: smaller */
+					.arch-top-label {
+						font-size: 8px !important;
+						letter-spacing: 0.1em !important;
+					}
+				}
+			`}</style>
+
+			<section id="about" className="py-32 relative bg-[var(--color-bg)]">
+				<div className="section-container">
 					<motion.div
-						variants={item}
-						className="order-last lg:order-first w-full"
+						variants={container}
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.2 }}
+						className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
 					>
-						<div
-							style={{
-								position: "relative",
-								borderRadius: "20px",
-								border: "1px solid var(--color-border)",
-								background: "var(--color-surface, rgba(0,0,0,0.02))",
-								padding: "36px 24px 32px",
-								overflow: "hidden",
-							}}
+						{/* ── Visual Bridge Diagram ── */}
+						<motion.div
+							variants={item}
+							className="order-last lg:order-first w-full"
 						>
-							{/* Background grid */}
 							<div
+								className="arch-diagram"
 								style={{
-									position: "absolute",
-									inset: 0,
-									backgroundImage: `linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)`,
-									backgroundSize: "28px 28px",
-									opacity: 0.25,
-									pointerEvents: "none",
+									position: "relative",
 									borderRadius: "20px",
-								}}
-							/>
-
-							{/* Accent glow center */}
-							<div
-								style={{
-									position: "absolute",
-									top: "50%",
-									left: "50%",
-									transform: "translate(-50%, -50%)",
-									width: "120px",
-									height: "120px",
-									borderRadius: "50%",
-									background:
-										"radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
-									opacity: 0.08,
-									pointerEvents: "none",
-									filter: "blur(20px)",
-								}}
-							/>
-
-							{/* ── Top label row ── */}
-							<div
-								style={{
-									display: "flex",
-									justifyContent: "space-between",
-									marginBottom: "20px",
-									position: "relative",
-									zIndex: 1,
+									border: "1px solid var(--color-border)",
+									background: "var(--color-surface, rgba(0,0,0,0.02))",
+									padding: "36px 24px 32px",
+									overflow: "hidden",
 								}}
 							>
-								{["Production Systems", "Intelligent Models"].map(
-									(label, i) => (
-										<div
-											key={i}
-											style={{
-												fontFamily: "monospace",
-												fontSize: "9px",
-												letterSpacing: "0.15em",
-												textTransform: "uppercase",
-												color: "var(--color-text-muted)",
-												opacity: 0.7,
-												width: "45%",
-												textAlign: i === 0 ? "left" : "right",
-											}}
-										>
-											{label}
-										</div>
-									),
-								)}
-							</div>
+								{/* Background grid */}
+								<div
+									style={{
+										position: "absolute",
+										inset: 0,
+										backgroundImage: `linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)`,
+										backgroundSize: "28px 28px",
+										opacity: 0.25,
+										pointerEvents: "none",
+										borderRadius: "20px",
+									}}
+								/>
 
-							{/* ── Main 3-column layout ── */}
-							<div
-								style={{
-									display: "grid",
-									gridTemplateColumns: "1fr auto 1fr",
-									gap: "12px",
-									alignItems: "center",
-									position: "relative",
-									zIndex: 1,
-								}}
-							>
-								{/* Left stack */}
+								{/* Accent glow center */}
+								<div
+									style={{
+										position: "absolute",
+										top: "50%",
+										left: "50%",
+										transform: "translate(-50%, -50%)",
+										width: "120px",
+										height: "120px",
+										borderRadius: "50%",
+										background:
+											"radial-gradient(circle, var(--color-accent) 0%, transparent 70%)",
+										opacity: 0.08,
+										pointerEvents: "none",
+										filter: "blur(20px)",
+									}}
+								/>
+
+								{/* ── Top label row ── */}
 								<div
 									style={{
 										display: "flex",
-										flexDirection: "column",
-										gap: "8px",
+										justifyContent: "space-between",
+										marginBottom: "20px",
+										position: "relative",
+										zIndex: 1,
 									}}
 								>
-									{leftStack.map((s, i) => (
-										<StackCard key={i} {...s} />
-									))}
+									{["Production Systems", "Intelligent Models"].map(
+										(label, i) => (
+											<div
+												key={i}
+												className="arch-top-label"
+												style={{
+													fontFamily: "monospace",
+													fontSize: "9px",
+													letterSpacing: "0.15em",
+													textTransform: "uppercase",
+													color: "var(--color-text-muted)",
+													opacity: 0.7,
+													width: "45%",
+													textAlign: i === 0 ? "left" : "right",
+												}}
+											>
+												{label}
+											</div>
+										),
+									)}
 								</div>
 
-								{/* Center bridge */}
+								{/* ── Main 3-column layout ── */}
 								<div
+									className="arch-grid"
 									style={{
-										display: "flex",
-										flexDirection: "column",
+										display: "grid",
+										gridTemplateColumns: "1fr auto 1fr",
+										gap: "12px",
 										alignItems: "center",
-										gap: "8px",
-										padding: "0 8px",
+										position: "relative",
+										zIndex: 1,
 									}}
 								>
-									{/* Top dot */}
+									{/* Left stack */}
 									<div
 										style={{
-											width: "1px",
-											height: "24px",
-											background:
-												"linear-gradient(to bottom, transparent, var(--color-accent))",
-										}}
-									/>
-
-									{/* Center badge */}
-									<div
-										style={{
-											width: "44px",
-											height: "44px",
-											borderRadius: "12px",
-											background: "var(--color-text)",
 											display: "flex",
+											flexDirection: "column",
+											gap: "8px",
+											minWidth: 0,
+										}}
+									>
+										{leftStack.map((s, i) => (
+											<StackCard key={i} {...s} />
+										))}
+									</div>
+
+									{/* Center bridge */}
+									<div
+										className="arch-bridge"
+										style={{
+											display: "flex",
+											flexDirection: "column",
 											alignItems: "center",
-											justifyContent: "center",
-											boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+											gap: "8px",
+											padding: "0 8px",
 											flexShrink: 0,
 										}}
 									>
-										<GitBranch size={18} color="#fff" strokeWidth={2} />
+										{/* Top dot */}
+										<div
+											className="arch-bridge__dot"
+											style={{
+												width: "1px",
+												height: "24px",
+												background:
+													"linear-gradient(to bottom, transparent, var(--color-accent))",
+											}}
+										/>
+
+										{/* Center badge */}
+										<div
+											className="arch-bridge__badge"
+											style={{
+												width: "44px",
+												height: "44px",
+												borderRadius: "12px",
+												background: "var(--color-text)",
+												display: "flex",
+												alignItems: "center",
+												justifyContent: "center",
+												boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+												flexShrink: 0,
+											}}
+										>
+											<GitBranch size={18} color="#fff" strokeWidth={2} />
+										</div>
+
+										{/* Bottom dot */}
+										<div
+											className="arch-bridge__dot"
+											style={{
+												width: "1px",
+												height: "24px",
+												background:
+													"linear-gradient(to top, transparent, var(--color-accent))",
+											}}
+										/>
+
+										{/* Label */}
+										<div
+											className="arch-bridge__label"
+											style={{
+												fontFamily: "monospace",
+												fontSize: "8px",
+												letterSpacing: "0.1em",
+												textTransform: "uppercase",
+												color: "var(--color-accent)",
+												textAlign: "center",
+												lineHeight: 1.5,
+												whiteSpace: "nowrap",
+											}}
+										>
+											Full
+											<br />
+											Stack
+										</div>
 									</div>
 
-									{/* Bottom dot */}
+									{/* Right stack */}
 									<div
 										style={{
-											width: "1px",
-											height: "24px",
-											background:
-												"linear-gradient(to top, transparent, var(--color-accent))",
+											display: "flex",
+											flexDirection: "column",
+											gap: "8px",
+											minWidth: 0,
+										}}
+									>
+										{rightStack.map((s, i) => (
+											<StackCard key={i} {...s} />
+										))}
+									</div>
+								</div>
+
+								{/* ── Bottom tag line ── */}
+								<div
+									style={{
+										marginTop: "28px",
+										paddingTop: "20px",
+										borderTop: "1px solid var(--color-border)",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+										gap: "8px",
+										position: "relative",
+										zIndex: 1,
+									}}
+								>
+									<div
+										style={{
+											height: "1px",
+											flex: 1,
+											background: "var(--color-border)",
 										}}
 									/>
-
-									{/* Label */}
-									<div
+									<span
 										style={{
 											fontFamily: "monospace",
-											fontSize: "8px",
-											letterSpacing: "0.1em",
+											fontSize: "9px",
+											letterSpacing: "0.15em",
 											textTransform: "uppercase",
 											color: "var(--color-accent)",
-											textAlign: "center",
-											lineHeight: 1.5,
+											opacity: 0.8,
 											whiteSpace: "nowrap",
 										}}
 									>
-										Full
-										<br />
-										Stack
-									</div>
+										Robust Architecture meets Practical AI
+									</span>
+									<div
+										style={{
+											height: "1px",
+											flex: 1,
+											background: "var(--color-border)",
+										}}
+									/>
 								</div>
+							</div>
+						</motion.div>
 
-								{/* Right stack */}
-								<div
+						{/* ── Text narrative ── */}
+						<div
+							className="flex flex-col gap-6 order-first lg:order-last"
+							style={{ paddingTop: "24px", paddingBottom: "24px" }}
+						>
+							<motion.div variants={item}>
+								<div className="font-mono text-[11px] tracking-[0.2em] uppercase text-[var(--color-accent)] mb-6 flex items-center gap-3">
+									{about.sectionLabel}
+									<div className="h-px bg-[var(--color-accent)] opacity-40 flex-1 max-w-[60px]" />
+								</div>
+								<h2 className="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[1.2] tracking-tight text-[var(--color-text)] whitespace-pre-line">
+									{about.heading}
+								</h2>
+							</motion.div>
+
+							<motion.div variants={item} className="flex flex-col gap-4">
+								{about.paragraphs.map((p, i) => (
+									<p
+										key={i}
+										className="text-[15px] text-[var(--color-text-muted)] leading-[1.75] [&>strong]:text-[var(--color-text)] [&>strong]:font-medium"
+										dangerouslySetInnerHTML={{ __html: p }}
+									/>
+								))}
+							</motion.div>
+
+							{/* ── CTA Button ── */}
+							<motion.div variants={item} className="mt-4 mb-10">
+								<a
+									href="#projects"
 									style={{
-										display: "flex",
-										flexDirection: "column",
+										display: "inline-flex",
+										alignItems: "center",
 										gap: "8px",
+										padding: "12px 24px",
+										borderRadius: "999px",
+										background: "var(--color-text)",
+										color: "#fff",
+										fontSize: "13px",
+										fontWeight: 600,
+										textDecoration: "none",
+										letterSpacing: "0.02em",
+										boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
+										transition:
+											"background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease",
+									}}
+									onMouseEnter={(e) => {
+										e.currentTarget.style.background = "var(--color-accent)";
+										e.currentTarget.style.transform = "translateY(-2px)";
+										e.currentTarget.style.boxShadow =
+											"0 8px 20px rgba(0,0,0,0.15)";
+									}}
+									onMouseLeave={(e) => {
+										e.currentTarget.style.background = "var(--color-text)";
+										e.currentTarget.style.transform = "translateY(0)";
+										e.currentTarget.style.boxShadow =
+											"0 4px 14px rgba(0,0,0,0.12)";
 									}}
 								>
-									{rightStack.map((s, i) => (
-										<StackCard key={i} {...s} />
-									))}
-								</div>
-							</div>
-
-							{/* ── Bottom tag line ── */}
-							<div
-								style={{
-									marginTop: "28px",
-									paddingTop: "20px",
-									borderTop: "1px solid var(--color-border)",
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "center",
-									gap: "8px",
-									position: "relative",
-									zIndex: 1,
-								}}
-							>
-								<div
-									style={{
-										height: "1px",
-										flex: 1,
-										background: "var(--color-border)",
-									}}
-								/>
-								<span
-									style={{
-										fontFamily: "monospace",
-										fontSize: "9px",
-										letterSpacing: "0.15em",
-										textTransform: "uppercase",
-										color: "var(--color-accent)",
-										opacity: 0.8,
-										whiteSpace: "nowrap",
-									}}
-								>
-									Robust Architecture meets Practical AI
-								</span>
-								<div
-									style={{
-										height: "1px",
-										flex: 1,
-										background: "var(--color-border)",
-									}}
-								/>
-							</div>
+									{about.ctaText}
+									<ArrowRight size={15} />
+								</a>
+							</motion.div>
 						</div>
 					</motion.div>
-
-					{/* ── Text narrative ── */}
-					<div
-						className="flex flex-col gap-6 order-first lg:order-last"
-						style={{ paddingTop: "24px", paddingBottom: "24px" }}
-					>
-						<motion.div variants={item}>
-							<div className="font-mono text-[11px] tracking-[0.2em] uppercase text-[var(--color-accent)] mb-6 flex items-center gap-3">
-								{about.sectionLabel}
-								<div className="h-px bg-[var(--color-accent)] opacity-40 flex-1 max-w-[60px]" />
-							</div>
-							<h2 className="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[1.2] tracking-tight text-[var(--color-text)] whitespace-pre-line">
-								{about.heading}
-							</h2>
-						</motion.div>
-
-						<motion.div variants={item} className="flex flex-col gap-4">
-							{about.paragraphs.map((p, i) => (
-								<p
-									key={i}
-									className="text-[15px] text-[var(--color-text-muted)] leading-[1.75] [&>strong]:text-[var(--color-text)] [&>strong]:font-medium"
-									dangerouslySetInnerHTML={{ __html: p }}
-								/>
-							))}
-						</motion.div>
-
-						{/* ── CTA Button ── */}
-						<motion.div variants={item} className="mt-4 mb-10">
-							<a
-								href="#projects"
-								style={{
-									display: "inline-flex",
-									alignItems: "center",
-									gap: "8px",
-									padding: "12px 24px",
-									borderRadius: "999px",
-									background: "var(--color-text)",
-									color: "#fff",
-									fontSize: "13px",
-									fontWeight: 600,
-									textDecoration: "none",
-									letterSpacing: "0.02em",
-									boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
-									transition:
-										"background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease",
-								}}
-								onMouseEnter={(e) => {
-									e.currentTarget.style.background = "var(--color-accent)";
-									e.currentTarget.style.transform = "translateY(-2px)";
-									e.currentTarget.style.boxShadow =
-										"0 8px 20px rgba(0,0,0,0.15)";
-								}}
-								onMouseLeave={(e) => {
-									e.currentTarget.style.background = "var(--color-text)";
-									e.currentTarget.style.transform = "translateY(0)";
-									e.currentTarget.style.boxShadow =
-										"0 4px 14px rgba(0,0,0,0.12)";
-								}}
-							>
-								{about.ctaText}
-								<ArrowRight size={15} />
-							</a>
-						</motion.div>
-					</div>
-				</motion.div>
-			</div>
-		</section>
+				</div>
+			</section>
+		</>
 	);
 }

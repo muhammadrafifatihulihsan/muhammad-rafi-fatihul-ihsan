@@ -164,7 +164,7 @@ export default function Credentials() {
 							variants={item}
 							className="font-mono text-[11px] tracking-[0.2em] uppercase text-[var(--color-accent)] mb-5 flex items-center gap-3"
 						>
-							Career History
+							Project & Competition History
 							<div className="h-px bg-[var(--color-accent)] opacity-40 flex-1 max-w-[40px]" />
 						</motion.div>
 
